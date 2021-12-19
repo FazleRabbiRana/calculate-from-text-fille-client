@@ -83,7 +83,14 @@ header h1 {
 }
 
 .more-results {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  font-size: 16px;
+  line-height: 1;
 }
 
 /* input wrapper */

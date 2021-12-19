@@ -152,7 +152,7 @@ function App() {
 									)}
 								</Droppable>
 							</DragDropContext>
-							<div className="more-results">more results</div>
+							<div className="more-results">⦿ ⦿ ⦿ ⦿ ⦿</div>
 							<div className="input-wrapper">
 								<h2 className="title">Input</h2>
 								<form onSubmit={handleSubmit}>
