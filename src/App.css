@@ -1,38 +1,166 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+.App > header + * {
+  flex: 1 1 auto;
+}
+
+header, footer {
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+header h1 {
+  font-size: 28px;
+}
+
+/**
+* Screens
+*/
+.screens-wrapper {
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.screen {
+  width: 350px;
+  height: 550px;
+  max-height: 80vh;
+  overflow: hidden;
+  border: 2px solid #1A1A1A;
+  background-color: #E6E6E6;
+  margin: 20px 5px;
+}
+
+.screen ::-webkit-scrollbar {
+	width: 7px;
+}
+
+.screen ::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #666;
+}
+
+.screen ::-webkit-scrollbar-thumb {
+  background-color: #f7f7f7;
+  border: 0.5px solid #333;
+  border-radius: 5px;
+}
+
+.inner.title {
+  font-size: 24px;
+}
+
+.screen > .inner {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* results wrapper */
+.results-wrapper {
+  flex: 1 1 auto;
+  max-height: 100%;
+  overflow-y: auto;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  list-style: none;
+}
+
+.inner > .title,
+.more-results {
+  flex: 0 0;
+  padding: 5px;
+}
+
+.more-results {
+  text-align: center;
+}
+
+/* input wrapper */
+.input-wrapper {
+  flex: 0 0;
+  padding: 5px;
+  border-top: 2px solid #1A1A1A;
+}
+
+.title-input {
+  display: block;
+  width: 100%;
+  height: 34px;
+  padding: 0 6px;
+  margin-top: 10px;
+}
+
+.upload-field {
+  margin: 6px 0;
+  font-size: 13px;
+}
+
+input[type="file"] {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.upload-field label {
+  position: relative;
+  border: 1px solid #666;
+  display: block;
+  width: 100%;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.upload-field label img {
+  max-width: 100%;
+  height: 30px;
+  margin: 6px auto 2px;
+  filter: contrast(0.85);
+}
+
+.input-wrapper .btn-wrapper {
+  display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.waiting {
+  font-size: 13px;
+  line-height: 1;
+  opacity: 0.8;
+  margin-bottom: 3px;
+  display: inline-flex;
+  flex-wrap: nowrap;
 }
 
-@keyframes App-logo-spin {
+.waiting span {
+  display: inline-flex;
+  white-space: nowrap;
+  width: 0ch;
+  overflow: hidden;
+  text-overflow: clip;
+  animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
   from {
-    transform: rotate(0deg);
+    width: 0ch;
   }
   to {
-    transform: rotate(360deg);
+    width: 2ch;
   }
 }
