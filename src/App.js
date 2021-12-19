@@ -200,7 +200,7 @@ function App() {
 									<ResultCard key={item._id} item={item} />
 								))}
 							</div>
-							<div className="more-results">more results</div>
+							<div className="more-results">⦿ ⦿ ⦿ ⦿ ⦿</div>
 						</div>
 					</div>
 				</div>
